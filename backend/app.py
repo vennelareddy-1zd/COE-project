@@ -23,8 +23,8 @@ def download_file(url, filename):
             f.write(r.content)
 
 # URLs (replace with your links)
-MODEL_URL = "YOUR_MODEL_LINK"
-VECTORIZER_URL = "YOUR_VECTORIZER_LINK"
+MODEL_URL = "https://drive.google.com/file/d/1DEQTSCU_I8RRTNyP-7S0IDVTUwIYl06d/view?usp=sharing"
+VECTORIZER_URL = "https://drive.google.com/file/d/16-6Q77eHWm47Fy_khQCnjkMEp0Ed988m/view?usp=sharing"
 
 download_file(MODEL_URL, "model.pkl")
 download_file(VECTORIZER_URL, "vectorizer.pkl")
