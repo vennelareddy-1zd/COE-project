@@ -25,7 +25,7 @@ import {
 } from "@mui/icons-material";
 
 // API base URL - uses relative path in production, localhost in development
-const API_BASE_URL = process.env.REACT_APP_API_URL || "http://localhost:5000";
+const API_BASE_URL = process.env.REACT_APP_API_URL || "https://your-app.onrender.com/predict";
 
 function App() {
   const [complaint, setComplaint] = useState("");
