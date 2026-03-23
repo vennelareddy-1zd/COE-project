@@ -3,6 +3,7 @@ from flask import Flask, request, jsonify, send_from_directory
 from flask_cors import CORS
 import joblib
 import json
+import requests
 
 app = Flask(__name__)
 
@@ -14,6 +15,19 @@ CORS(app, resources={
         "allow_headers": ["Content-Type"]
     }
 })
+def download_file(url, filename):
+    if not os.path.exists(filename):
+        print(f"Downloading {filename}...")
+        r = requests.get(url)
+        with open(filename, "wb") as f:
+            f.write(r.content)
+
+# URLs (replace with your links)
+MODEL_URL = "YOUR_MODEL_LINK"
+VECTORIZER_URL = "YOUR_VECTORIZER_LINK"
+
+download_file(MODEL_URL, "model.pkl")
+download_file(VECTORIZER_URL, "vectorizer.pkl")
 
 # Load model and vectorizer
 try:
